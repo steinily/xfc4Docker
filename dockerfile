@@ -15,7 +15,6 @@ USER parrotos
 WORKDIR /home/parrotos
 
 RUN mkdir -p /home/parrotos/.vnc \
-    && echo -e '#!/bin/bash\nstartxfce4 & ' > /home/parrotos/.vnc/xstartup \
-    && echo -e 'parrotos\nparrotos\nn\n' | vncpasswd 
+    && echo -e '#!/bin/bash\nstartxfce4 & ' > /home/parrotos/.vnc/xstartup 
 
 CMD ["/bin/bash", "/usr/bin/vncserver :99" , "/opt/noVNC/utils/novnc_proxy --vnc 127.0.0.1:5999"]
