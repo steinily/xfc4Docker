@@ -5,8 +5,7 @@ LABEL maintainer = "steinily (henczistvan87@gmail.com)"
 
 RUN apt-get update\ 
     && apt-get install git xfce4 faenza-icon-theme bash python3 tigervnc-standalone-server xfce4-terminal firefox-esr -y \
-    && adduser parrotos -shell /bin/bash -System -disabled-password  \
-    && echo -e "admin\nadmin" | passwd parrotos  \
+    && adduser parrotos -shell /bin/bash -System -disabled-password && echo -e "admin\nadmin" | passwd parrotos  \
     && echo 'parrotos ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers \
     && git clone https://github.com/novnc/noVNC /opt/noVNC \
     && git clone https://github.com/novnc/websockify /opt/noVNC/utils/websockify 
